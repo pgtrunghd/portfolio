@@ -14,7 +14,7 @@ interface Props {
   title: string;
   href?: string;
   description: string;
-  dates: string;
+  dates?: string;
   tags: readonly string[];
   link?: string;
   image?: string;
@@ -40,7 +40,7 @@ export const ProjectCard = ({
   className,
 }: Props) => {
   return (
-    <Card>
+    <Card className="flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full">
       <Link href={href || ""} className={cn("block cursor-pointer", className)}>
         {video && (
           <video
@@ -69,7 +69,7 @@ export const ProjectCard = ({
           <div className="hidden font-sans text-xs underline print:visible">
             {link?.replace("https://", "").replace("www.", "").replace("/", "")}
           </div>
-          <div className="max-w-full text-pretty font-sans text-xs text-muted-foreground">
+          <div className="max-w-full text-pretty text-xs text-muted-foreground">
             {description}
           </div>
         </div>
@@ -94,7 +94,10 @@ export const ProjectCard = ({
           <div className="flex flex-wrap items-start gap-1">
             {links?.map((link, index) => (
               <Link href={link?.href} target="_blank" key={index}>
-                <Badge key={index} className="flex gap-2 px-2 py-1 text-[10px]">
+                <Badge
+                  key={index}
+                  className="flex items-center gap-2 px-2 py-1 text-[10px]"
+                >
                   {link.icon}
                   {link.type}
                 </Badge>

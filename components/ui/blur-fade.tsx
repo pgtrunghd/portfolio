@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { RefObject, useRef } from "react";
 import {
   AnimatePresence,
   motion,
@@ -28,7 +28,6 @@ interface BlurFadeProps {
 
 export default function BlurFade({
   children,
-  className,
   variant,
   duration = 0.4,
   delay = 0,
@@ -37,8 +36,11 @@ export default function BlurFade({
   inViewMargin = "-50px",
   blur = "6px",
 }: BlurFadeProps) {
-  const ref = useRef(null);
-  const inViewResult = useInView(ref, { once: true, margin: inViewMargin });
+  const ref = useRef<Element>(null);
+  const inViewResult = useInView(ref as RefObject<Element>, {
+    once: true,
+    margin: inViewMargin,
+  });
   const isInView = !inView || inViewResult;
   const defaultVariants: Variants = {
     hidden: { y: yOffset, opacity: 0, filter: `blur(${blur})` },

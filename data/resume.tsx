@@ -1,3 +1,5 @@
+import { Globe } from "lucide-react";
+
 export const DATA = {
   name: "Trung P",
   initial: "TP",
@@ -69,9 +71,37 @@ export const DATA = {
       icon: "nest.svg",
     },
   ],
-  // projects: [
-  //   {
-  //     title: 
-  //   }
-  // ]
+  projects: [
+    {
+      title: "Bvote",
+      href: "https://bvote.vn/",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, placeat, dolore inventore quaerat, corrupti iure ullam magni esse sint cum repudiandae eos. Odit atque ipsam laudantium eligendi vitae, sed veniam.",
+      technologies: ["Next.js", "Typescript", "TailwindCSS"],
+      links: [
+        {
+          type: "Website",
+          href: "https://bvote.vn/",
+          icon: <Globe size={12} />,
+        },
+      ],
+      image:
+        "https://dichvuseohot.com/wp-content/uploads/2023/10/best-landing-page-examples.jpg",
+    },
+    {
+      title: "Boffice",
+      href: "https://boffice.bytesoft.vn/auth",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, placeat, dolore inventore quaerat, corrupti iure ullam magni esse sint cum repudiandae eos. Odit atque ipsam laudantium eligendi vitae, sed veniam.",
+      technologies: ["ReactJS", "Typescript", "Styled-Components", "NestJS"],
+      links: [
+        {
+          type: "Website",
+          href: "https://boffice.bytesoft.vn/auth",
+          icon: <Globe size={12} />,
+        },
+      ],
+      image: "/projects/boffice.png",
+    },
+  ],
 };
