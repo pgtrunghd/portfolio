@@ -1,4 +1,4 @@
-import { Globe } from "lucide-react";
+import { Globe, Home, Linkedin, Notebook } from "lucide-react";
 
 export const DATA = {
   name: "Trung P",
@@ -104,4 +104,26 @@ export const DATA = {
       image: "/projects/boffice.png",
     },
   ],
+  navbar: [
+    {
+      href: "/",
+      icon: <Home size={4} />,
+      label: "Home",
+    },
+    {
+      href: "/blog",
+      icon: <Notebook size={4} />,
+      label: "Blog",
+    },
+  ],
+  contact: {
+    social: {
+      LinkeIn: {
+        name: "Linkedin",
+        url: "https://www.linkedin.com/in/pham-trung-b7b12a18b/",
+        icon: <Linkedin size={4} />,
+        navbar: true,
+      },
+    },
+  },
 };
