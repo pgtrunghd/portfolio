@@ -1,0 +1,73 @@
+import MdxLayout from "@/components/mdx-layout";
+
+# {metadata.title}
+
+Npm, Yarn và Pnpm là các trình quản lý gói (package manager) phổ biến trong hệ sinh thái Javascript. Chúng đều được sử dụng để quản lý các thư viện và dependency trong dự án của bạn, nhưng mỗi công cụ có các đặc điểm và cơ chế riêng. Hãy cùng so sánh một cách chi tiết, sử dụng các so sánh trực quan để dễ hiểu
+
+## npm
+
+Đặc điểm nổi bật:
+
+- Được tích hợp sẵn khi cài đặt Node.js.
+
+- Cách hoạt động:
+
+  - Khi bạn cài một gói, npm sẽ tải tất cả các phụ thuộc và lưu chúng trong thư mục node_modules.
+  - npm đặt tất cả các gói vào một thư mục, tạo nên kích thước khá lớn.
+
+- Nhược điểm:
+
+  - Không hiệu quả trong việc quản lý bộ nhớ. Ví dụ, nếu hai gói khác nhau yêu cầu cùng một phiên bản dependency, npm sẽ cài đặt bản sao cho từng gói, dẫn đến lãng phí không gian.
+  - Đã cải thiện đáng kể với các phiên bản npm hiện đại (npm v7+), hỗ trợ workspaces và lockfile mới.
+
+## yarn
+
+- Được phát triển bởi Meta như một cải tiến so với npm.
+
+- Cách hoạt động:
+
+  - Tăng tốc việc cài đặt bằng cách sử dụng cache system: Nếu một gói đã được tải về trước đó, yarn sẽ sử dụng bản sao trong bộ nhớ cache thay vì tải lại từ mạng.
+  - Yarn workspaces: Hỗ trợ các dự án đa gói (monorepo) tốt hơn, cho phép chia sẻ dependency giữa các phần của dự án.
+  - Cài đặt song song: Yarn cài các gói đồng thời, làm giảm thời gian cài đặt.
+
+- Nhược điểm:
+
+  - Thư viện `node_modules` vẫn có kích thước khá lớn.
+  - Có thể không tương thích hoàn toàn với một số hệ thống cũ.
+
+## Pnpm
+
+- Cách hoạt động:
+
+  - Khi cài một gói, pnpm không lưu gói trực tiếp vào thư mục `node_modules`. Thay vào đó, nó lưu trữ các gói vào một kho chung (~/.pnpm-store) và tạo hard links hoặc symlinks đến chúng trong dự án.
+  - Tối ưu bộ nhớ: Không lưu trữ dư thừa, các gói chung được chia sẻ giữa các dự án.
+  - Performance vượt trội: Vì sử dụng liên kết, pnpm cài đặt và chạy nhanh hơn.
+
+- Nhược điểm:
+
+  - Một số dự án hoặc công cụ không quen với cấu trúc liên kết của pnpm có thể cần cấu hình thêm.
+
+## So sánh chi tiết
+
+| Tính năng            | Npm                 | Yarn     | Pnpm         |
+| :------------------- | :------------------ | :------- | :----------- |
+| Cache                | Không hiệu quả bằng | Hiệu quả | Rất hiệu quả |
+| Tối ưu bộ nhớ        | Trung bình          | Tốt      | Rất tốt      |
+| Cài đặt song song    | Có (npm 5+)         | Có       | Có           |
+| Tương thích monorepo | Tốt (npm 7+)        | Rất tốt  | Rất tốt      |
+| Tốc độ               | Trung bình          | Nhanh    | Rất nhanh    |
+
+## Kết luận
+
+- Chọn npm nếu bạn cần một công cụ mặc định, không cần cài đặt thêm, và không yêu cầu tối ưu hiệu suất cao.
+- Chọn yarn nếu bạn muốn tốc độ nhanh hơn npm và hỗ trợ tốt cho các dự án lớn hoặc monorepo.
+- Chọn Pnpm nếu bạn ưu tiên hiệu quả bộ nhớ và tốc độ vượt trội, đặc biệt khi làm việc trên nhiều dự án cùng lúc.
+
+export const metadata = {
+  title: "Sự khác nhau giữa npm, yarn và pnpm",
+  publishDate: "2025-01-04T00:00:00Z",
+};
+
+export default function MDXPage({ children }) {
+  return <MdxLayout>{children}</MdxLayout>;
+}

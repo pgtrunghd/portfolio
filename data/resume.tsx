@@ -1,12 +1,13 @@
-import { Globe, Home, Linkedin, Notebook } from "lucide-react";
+import { Icon } from "@/components/icons";
+import { Code2, Globe, Home, Notebook } from "lucide-react";
 
 export const DATA = {
-  name: "Trung P",
+  name: "Trung Pham",
   initial: "TP",
   location: "Hanoi, Vietnam",
   description: "As a frontend developer. I love building a website",
   summary:
-    "At the end of 2022, I quit my job as a software engineer to go fulltime into building and scaling my own SaaS businesses. In the past, I pursued a double degree in computer science and business, interned at big tech companies in Silicon Valley, and competed in over 21 hackathons for fun. I also had the pleasure of being a part of the first ever in-person cohort of buildspace called buildspace sf1.",
+    "I am working as a frontend developer at a software company, with 2 years of experience in web development since starting my career in 2022. I focus on creating user-focused applications and am currently expanding my expertise in backend development, aiming to transition into a DevOps role in the future.",
   avatarUrl: "avatar.jpg",
   work: [
     {
@@ -19,7 +20,7 @@ export const DATA = {
       start: "March 2022",
       end: "Present",
       description:
-        "Implemented the Bitcoin discreet log contract (DLC) protocol specifications as an open source Typescript SDK. Dockerized all microservices and setup production kubernetes cluster. Architected a data lake using AWS S3 and Athena for historical backtesting of bitcoin trading strategies. Built a mobile app using react native and typescript.",
+        "Developed responsive web interfaces using HTML5, CSS3, JavaScript, and React.js. Collaborated with designers and backend teams to implement and deploy user-friendly features. Optimized website performance and ensured cross-browser compatibility. Worked with Git and Agile workflows to meet project milestones.",
     },
     {
       company: "Bytesoft",
@@ -31,10 +32,19 @@ export const DATA = {
       start: "November 2021",
       end: "March 2022",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias laborum illo quas natus mollitia, debitis pariatur porro excepturi blanditiis autem expedita modi repellendus doloribus ex ab eaque totam cupiditate voluptatum?",
+        "Built responsive web interfaces using HTML, CSS, JavaScript, and React.js and deploy website to Vercel.",
     },
   ],
   education: [
+    {
+      school: "FPT Software Academy",
+      href: "https://fsoft-academy.edu.vn/",
+      degree: "Frontend Developer",
+      location: "Hanoi, Vietnam",
+      start: "March 2021",
+      end: "November 2021",
+      logoUrl: "fsoft.png",
+    },
     {
       school: "Military Technical Academy",
       href: "https://mta.edu.vn/",
@@ -76,7 +86,7 @@ export const DATA = {
       title: "Bvote",
       href: "https://bvote.vn/",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, placeat, dolore inventore quaerat, corrupti iure ullam magni esse sint cum repudiandae eos. Odit atque ipsam laudantium eligendi vitae, sed veniam.",
+        "The landing page of Bvote: Online solutions For Annual General Meeting of Shareholders",
       technologies: ["Next.js", "Typescript", "TailwindCSS"],
       links: [
         {
@@ -85,15 +95,21 @@ export const DATA = {
           icon: <Globe size={12} />,
         },
       ],
-      image:
-        "https://dichvuseohot.com/wp-content/uploads/2023/10/best-landing-page-examples.jpg",
+      image: "/projects/bvote.png",
     },
     {
       title: "Boffice",
       href: "https://boffice.bytesoft.vn/auth",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, placeat, dolore inventore quaerat, corrupti iure ullam magni esse sint cum repudiandae eos. Odit atque ipsam laudantium eligendi vitae, sed veniam.",
-      technologies: ["ReactJS", "Typescript", "Styled-Components", "NestJS"],
+        "The ERP System covers a range of functions such as financial management, human resources, manufacturing, inventory management, sales, and customer relationship management.",
+      technologies: [
+        "ReactJS",
+        "Typescript",
+        "Styled-Components",
+        "Vite",
+        "ExpressJS",
+        "MySQL",
+      ],
       links: [
         {
           type: "Website",
@@ -103,6 +119,29 @@ export const DATA = {
       ],
       image: "/projects/boffice.png",
     },
+    {
+      title: "ID Bvote",
+      href: "https://idtest-web.bvote.vn/sign-in",
+      description:
+        "An app that manages informations, and activities of the account user. This account allows user to use many of Bvote's services.",
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "React Hook Form",
+        "SWR",
+        "MongoDB",
+        "TailwindCSS",
+        "ExpressJS",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://idtest-web.bvote.vn/sign-in",
+          icon: <Globe size={12} />,
+        },
+      ],
+      image: "/projects/bvote-id.png",
+    },
   ],
   navbar: [
     {
@@ -111,7 +150,12 @@ export const DATA = {
       label: "Home",
     },
     {
-      href: "/blog",
+      href: "/#projects",
+      icon: <Code2 size={4} />,
+      label: "Projects",
+    },
+    {
+      href: "/blogs",
       icon: <Notebook size={4} />,
       label: "Blog",
     },
@@ -121,8 +165,20 @@ export const DATA = {
       LinkeIn: {
         name: "Linkedin",
         url: "https://www.linkedin.com/in/pham-trung-b7b12a18b/",
-        icon: <Linkedin size={4} />,
+        icon: Icon.linkein,
         navbar: true,
+      },
+      Github: {
+        name: "Github",
+        url: "https://github.com/pgtrunghd",
+        icon: Icon.github,
+        navbar: true,
+      },
+      Mail: {
+        name: "Mail",
+        url: "mailto:pgtrung1997@gmail.com",
+        icon: Icon.github,
+        navbar: false,
       },
     },
   },

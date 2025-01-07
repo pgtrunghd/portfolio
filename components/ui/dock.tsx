@@ -39,10 +39,11 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
       return React.Children.map(children, (child) => {
         if (React.isValidElement(child) && child.type === DockIcon) {
           return React.cloneElement(child, {
-            ...child.props,
             mouseX: mouseX,
             magnification: magnification,
             distance: distance,
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            ...(child.props as any),
           });
         }
         return child;
@@ -70,9 +71,10 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
 Dock.displayName = "Dock";
 
 export interface DockIconProps {
-  size?: number;
+  // size?: number;
   magnification?: number;
   distance?: number;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   mouseX?: any;
   className?: string;
   children?: React.ReactNode;
@@ -80,7 +82,7 @@ export interface DockIconProps {
 }
 
 const DockIcon = ({
-  size,
+  // size,
   magnification = DEFAULT_MAGNIFICATION,
   distance = DEFAULT_DISTANCE,
   mouseX,

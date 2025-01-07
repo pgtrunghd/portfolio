@@ -1,17 +1,15 @@
 "use client";
 
 import { DATA } from "@/data/resume";
-import { Dock, DockIcon } from "./ui/dock";
-import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
-import Link from "next/link";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { ThemeToggle } from "./theme-toggle";
 import { buttonVariants } from "./ui/button";
+import { Dock, DockIcon } from "./ui/dock";
 import { Separator } from "./ui/separator";
-import { useMotionValue } from "framer-motion";
+import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
 export default function Navbar() {
-  //   const mouseX = useMotionValue(Infinity);
-
   return (
     <div className="pointer-events-none fixed inset-x-0 bottom-0 z-30 mx-auto mb-4 flex origin-bottom h-full max-h-14">
       <div className="fixed bottom-0 inset-x-0 h-16 w-full bg-background to-transparent backdrop-blur-lg [-webkit-mask-image:linear-gradient(to_top,black,transparent)] dark:bg-background"></div>
@@ -41,7 +39,8 @@ export default function Navbar() {
         ))}
         <Separator orientation="vertical" className="h-full" />
         {Object.entries(DATA.contact.social)
-          .filter(([_, social]) => social.navbar)
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          .filter(([key, value]) => value.navbar)
           .map(([name, social]) => (
             <DockIcon key={name}>
               <Tooltip>
@@ -53,7 +52,7 @@ export default function Navbar() {
                       "size-12 rounded-full"
                     )}
                   >
-                    {social.icon}
+                    <social.icon className="dark:fill-neutral-200" />
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -62,17 +61,17 @@ export default function Navbar() {
               </Tooltip>
             </DockIcon>
           ))}
-        {/* <Separator orientation="vertical" className="h-full py-2" />
+        <Separator orientation="vertical" className="h-full py-2" />
         <DockIcon>
           <Tooltip>
             <TooltipTrigger asChild>
-              <ModeToggle />
+              <ThemeToggle />
             </TooltipTrigger>
             <TooltipContent>
               <p>Theme</p>
             </TooltipContent>
           </Tooltip>
-        </DockIcon> */}
+        </DockIcon>
       </Dock>
     </div>
   );

@@ -1,6 +1,5 @@
 "use client";
 
-import { RefObject, useRef } from "react";
 import {
   AnimatePresence,
   motion,
@@ -8,6 +7,7 @@ import {
   UseInViewOptions,
   Variants,
 } from "framer-motion";
+import { RefObject, useRef } from "react";
 
 type MarginType = UseInViewOptions["margin"];
 
@@ -50,7 +50,7 @@ export default function BlurFade({
   return (
     <AnimatePresence>
       <motion.div
-        ref={ref}
+        ref={ref as RefObject<HTMLDivElement>}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
         exit="hidden"

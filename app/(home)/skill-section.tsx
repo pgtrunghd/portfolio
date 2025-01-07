@@ -1,9 +1,13 @@
 import BlurFade from "@/components/ui/blur-fade";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
 import { BLUR_FADE_DELAY } from "@/lib/constants";
 import React from "react";
-import Image from 'next/image';
+import Image from "next/image";
 
 export const SkillSection = () => {
   return (
@@ -21,7 +25,7 @@ export const SkillSection = () => {
                   key={skill.name}
                   delay={BLUR_FADE_DELAY * 10 + index * 0.1}
                 >
-                  <div className="size-8">
+                  <div className="size-8 dark:invert">
                     <Image src={skill.icon} alt={skill.name} fill />
                   </div>
                 </BlurFade>

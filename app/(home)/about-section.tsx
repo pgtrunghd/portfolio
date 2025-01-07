@@ -9,7 +9,7 @@ export const AboutSection = () => {
         <h2 className="text-xl font-bold">About</h2>
       </BlurFade>
       <BlurFade delay={BLUR_FADE_DELAY * 4}>
-        <p className="font-sans text-pretty text-sm text-muted-foreground">
+        <p className="text-pretty text-base text-muted-foreground">
           {DATA.summary}
         </p>
       </BlurFade>

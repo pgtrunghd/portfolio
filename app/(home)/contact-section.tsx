@@ -17,15 +17,13 @@ export const ContactSection = () => {
               Get in Touch
             </h2>
             <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Want to chat? Just shoot me a dm{" "}
+              Contact me at{" "}
               <Link
-                href={DATA.contact.social.LinkeIn.url}
+                href={DATA.contact.social.Mail.url}
                 className="text-blue-500 hover:underline"
               >
-                with a direct question on twitter
+                pgtrung1997@gmail.com
               </Link>{" "}
-              and I&apos;ll respond whenever I can. I will ignore all
-              soliciting.
             </p>
           </div>
         </BlurFade>
