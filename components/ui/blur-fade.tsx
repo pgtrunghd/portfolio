@@ -1,13 +1,13 @@
 "use client";
 
+import { useRef } from "react";
 import {
   AnimatePresence,
   motion,
   useInView,
   UseInViewOptions,
   Variants,
-} from "framer-motion";
-import { RefObject, useRef } from "react";
+} from "motion/react";
 
 type MarginType = UseInViewOptions["margin"];
 
@@ -20,7 +20,8 @@ interface BlurFadeProps {
   };
   duration?: number;
   delay?: number;
-  yOffset?: number;
+  offset?: number;
+  direction?: "up" | "down" | "left" | "right";
   inView?: boolean;
   inViewMargin?: MarginType;
   blur?: string;
@@ -28,29 +29,37 @@ interface BlurFadeProps {
 
 export default function BlurFade({
   children,
+  className,
   variant,
   duration = 0.4,
   delay = 0,
-  yOffset = 6,
+  offset = 6,
+  direction = "down",
   inView = false,
   inViewMargin = "-50px",
   blur = "6px",
 }: BlurFadeProps) {
-  const ref = useRef<Element>(null);
-  const inViewResult = useInView(ref as RefObject<Element>, {
-    once: true,
-    margin: inViewMargin,
-  });
+  const ref = useRef(null);
+  const inViewResult = useInView(ref, { once: true, margin: inViewMargin });
   const isInView = !inView || inViewResult;
   const defaultVariants: Variants = {
-    hidden: { y: yOffset, opacity: 0, filter: `blur(${blur})` },
-    visible: { y: -yOffset, opacity: 1, filter: `blur(0px)` },
+    hidden: {
+      [direction === "left" || direction === "right" ? "x" : "y"]:
+        direction === "right" || direction === "down" ? -offset : offset,
+      opacity: 0,
+      filter: `blur(${blur})`,
+    },
+    visible: {
+      [direction === "left" || direction === "right" ? "x" : "y"]: 0,
+      opacity: 1,
+      filter: `blur(0px)`,
+    },
   };
   const combinedVariants = variant || defaultVariants;
   return (
     <AnimatePresence>
       <motion.div
-        ref={ref as RefObject<HTMLDivElement>}
+        ref={ref}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
         exit="hidden"
@@ -60,6 +69,7 @@ export default function BlurFade({
           duration,
           ease: "easeOut",
         }}
+        className={className}
       >
         {children}
       </motion.div>
