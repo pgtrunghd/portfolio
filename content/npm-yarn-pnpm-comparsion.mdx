@@ -1,6 +1,7 @@
-import MdxLayout from "@/components/mdx-layout";
-
-# {metadata.title}
+---
+title: Sự khác nhau giữa npm, yarn và pnpm
+publishDate: 2025-01-04T00:00:00Z
+---
 
 Npm, Yarn và Pnpm là các trình quản lý gói (package manager) phổ biến trong hệ sinh thái Javascript. Chúng đều được sử dụng để quản lý các thư viện và dependency trong dự án của bạn, nhưng mỗi công cụ có các đặc điểm và cơ chế riêng. Hãy cùng so sánh một cách chi tiết, sử dụng các so sánh trực quan để dễ hiểu
 
@@ -62,12 +63,3 @@ Npm, Yarn và Pnpm là các trình quản lý gói (package manager) phổ biế
 - Chọn npm nếu bạn cần một công cụ mặc định, không cần cài đặt thêm, và không yêu cầu tối ưu hiệu suất cao.
 - Chọn yarn nếu bạn muốn tốc độ nhanh hơn npm và hỗ trợ tốt cho các dự án lớn hoặc monorepo.
 - Chọn Pnpm nếu bạn ưu tiên hiệu quả bộ nhớ và tốc độ vượt trội, đặc biệt khi làm việc trên nhiều dự án cùng lúc.
-
-export const metadata = {
-  title: "Sự khác nhau giữa npm, yarn và pnpm",
-  publishDate: "2025-01-04T00:00:00Z",
-};
-
-export default function MDXPage({ children }) {
-  return <MdxLayout>{children}</MdxLayout>;
-}

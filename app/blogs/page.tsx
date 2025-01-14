@@ -1,11 +1,10 @@
 import Blogs from "@/components/blogs";
 import BlurFade from "@/components/ui/blur-fade";
-import { getBlogs } from "@/data/blogs";
+import { getAllBlogs } from "@/data/blogs";
 import { BLUR_FADE_DELAY } from "@/lib/constants";
-import React from "react";
 
 export default async function BlogPage() {
-  const blogs = await getBlogs();
+  const blogs = await getAllBlogs();
 
   return (
     <>
