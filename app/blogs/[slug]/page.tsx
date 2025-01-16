@@ -9,7 +9,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const blog = await getBlog(slug);
-  const { title, description, publishDate } = blog.metadata;
+  const { title, description } = blog.metadata;
 
   return {
     title,
