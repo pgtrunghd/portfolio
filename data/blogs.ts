@@ -14,6 +14,7 @@ export interface Blog {
   slug: string;
   title: string;
   publishDate: string;
+  description: string;
 }
 
 async function markdownToHTML(content: string) {
@@ -49,9 +50,10 @@ export async function getAllBlogs(): Promise<Blog[]> {
       // const { metadata } = await import(`@/content/${file}`);
       const { metadata } = await getBlog(file);
       return {
-        slug: file,
+        slug: path.basename(file, path.extname(file)),
         title: metadata.title,
         publishDate: metadata.publishDate,
+        description: metadata.description,
       };
     })
   );

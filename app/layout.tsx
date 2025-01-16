@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Navbar from "@/components/navbar";
 import { ThemeProvider } from "next-themes";
+import { DATA } from "@/data/resume";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -13,8 +14,9 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "Pham Gia Trung",
-  description: "This is my personal website",
+  title: DATA.name,
+  // description: "This is my personal website",
+  description: DATA.description,
 };
 
 export default function RootLayout({

@@ -2,6 +2,8 @@ import { Icon } from "@/components/icons";
 import { Code2, Globe, Home, Notebook } from "lucide-react";
 
 export const DATA = {
+  // url: 'http://trungpham.dev/',
+  url: "https://qgngrszl-3000.asse.devtunnels.ms/",
   name: "Trung Pham",
   initial: "TP",
   location: "Hanoi, Vietnam",

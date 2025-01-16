@@ -4,6 +4,7 @@ import remarkGfm from "remark-gfm";
 
 const nextConfig: NextConfig = {
   /* config options here */
+  compress: true,
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
   images: {
     remotePatterns: [
