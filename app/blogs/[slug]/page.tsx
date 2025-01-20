@@ -16,13 +16,13 @@ export async function generateMetadata({
     description,
     publisher: DATA.name,
     creator: DATA.name,
-    openGraph: {
-      title: DATA.name,
-      description: DATA.description,
-      images: [
-        "https://raw.githubusercontent.com/pgtrunghd/hosting-images/refs/heads/master/open-graph-image.webp",
-      ],
-    },
+    // openGraph: {
+    //   title: DATA.name,
+    //   description: DATA.description,
+    //   images: [
+    //     "https://raw.githubusercontent.com/pgtrunghd/hosting-images/refs/heads/master/open-graph-image.webp",
+    //   ],
+    // },
   };
 }
 
