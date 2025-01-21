@@ -1,4 +1,3 @@
-import { getBlog } from "@/data/blogs";
 import { ImageResponse } from "next/og";
 
 export const size = {
