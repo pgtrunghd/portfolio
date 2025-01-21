@@ -1,3 +1,4 @@
+import { getBlog } from "@/data/blogs";
 import { ImageResponse } from "next/og";
 
 export const size = {
@@ -7,12 +8,16 @@ export const size = {
 
 export const contentType = "image/png";
 
-export default async function Image() {
+export default async function Image({ params }: { params: { slug: string } }) {
+  const { slug } = params;
+  const blog = await getBlog(slug);
+  const { title } = blog.metadata;
+
   return new ImageResponse(
     (
       <div
         style={{
-          fontSize: 128,
+          fontSize: 48,
           background: "white",
           width: "100%",
           height: "100%",
@@ -21,7 +26,7 @@ export default async function Image() {
           justifyContent: "center",
         }}
       >
-        About Acme
+        {title}
       </div>
     ),
     {
