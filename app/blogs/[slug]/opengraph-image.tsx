@@ -8,14 +8,11 @@ export const size = {
 
 export const contentType = "image/png";
 
-export default async function Image({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
+export default async function Image({ params }: { params: { slug: string } }) {
+  const { slug } = params;
   const blog = await getBlog(slug);
   const { title } = blog.metadata;
+  console.log(title);
 
   return new ImageResponse(
     (
@@ -30,7 +27,7 @@ export default async function Image({
           justifyContent: "center",
         }}
       >
-        {title}
+        About Acme
       </div>
     ),
     {
