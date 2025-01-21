@@ -8,12 +8,7 @@ export const size = {
 
 export const contentType = "image/png";
 
-export default async function Image({ params }: { params: { slug: string } }) {
-  const { slug } = params;
-  const blog = await getBlog(slug);
-  const { title } = blog.metadata;
-  console.log(title);
-
+export default async function Image() {
   return new ImageResponse(
     (
       <div
