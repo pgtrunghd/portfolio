@@ -1,4 +1,4 @@
-import { metadata } from "./../app/layout";
+
 // import { readdir } from "fs/promises";
 import fs from "fs";
 import path from "path";
