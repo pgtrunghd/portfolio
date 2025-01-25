@@ -2,8 +2,6 @@ import { Icon } from "@/components/icons";
 import { Code2, Globe, Home, Notebook } from "lucide-react";
 
 export const DATA = {
-  // url: 'http://trungpham.dev/',
-  url: process.env.NEXT_PUBLIC_URL || "http://localhost:3000",
   name: "Trung Pham",
   initial: "TP",
   location: "Hanoi, Vietnam",
