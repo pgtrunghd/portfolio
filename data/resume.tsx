@@ -3,6 +3,7 @@ import { Code2, Globe, Home, Notebook } from "lucide-react";
 
 export const DATA = {
   name: "Trung Pham",
+  url: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
   initial: "TP",
   location: "Hanoi, Vietnam",
   description: "As a frontend developer. I love building a website",
