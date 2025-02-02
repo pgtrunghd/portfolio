@@ -15,7 +15,6 @@ const fontSans = FontSans({
 
 export const metadata: Metadata = {
   title: DATA.name,
-  // description: "This is my personal website",
   description: DATA.description,
 };
 
