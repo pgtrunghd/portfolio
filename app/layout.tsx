@@ -14,8 +14,9 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: 'Portfolio for Dragontube',
+  title: `${DATA.name} | Portfolio`,
   description: DATA.description,
+  keywords: [DATA.name, "Portfolio"],
 };
 
 export default function RootLayout({
