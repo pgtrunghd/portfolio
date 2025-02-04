@@ -14,7 +14,7 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: DATA.name,
+  title: 'Portfolio for Dragontube',
   description: DATA.description,
 };
 
