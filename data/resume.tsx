@@ -143,6 +143,30 @@ export const DATA = {
       ],
       image: "/projects/bvote-id.png",
     },
+    {
+      title: "Expense Tracker",
+      href: "https://expense-tracker-theta-drab-79.vercel.app/",
+      description:
+        "A web app that allows users to track their expenses and manage their budget.",
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "TailwindCSS",
+        "Shadcn UI",
+        "Redux",
+        "React Hook Form",
+        "PostgreSQL",
+        "NestJS",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://expense-tracker-theta-drab-79.vercel.app/",
+          icon: <Globe size={12} />,
+        },
+      ],
+      image: "/projects/expense-tracker.png",
+    },
   ],
   navbar: [
     {
